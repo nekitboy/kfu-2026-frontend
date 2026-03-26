@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .container {
+            width: 1320px;
+            margin: 0 auto;
+        }
+
+        .header {
+            padding: 24px 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header__logo {
+            display: flex;
+            align-items: center;
+
+            line-height: 38px;
+            font-size: 32px;
+            letter-spacing: -0.03em;
+            font-weight: 500;
+        }
+        .header__logo__icon {
+            width: 32px;
+            height: 32px;
+            background: url('logo.png') center no-repeat
+        }
+        .header__search {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .header__search input {
+            width: 400px;
+            height: 45px;
+            border: solid 1px #e6e6e6;
+            border-radius: 6px 0 0 6px;
+            padding: 11px 0 11px 43px;
+        }
+        .header__search__icon {
+            position: absolute;
+            left: 16px;
+            width: 20px;
+            height: 20px;
+            background: url('Search.png') center no-repeat;
+        }
+        .header__search_button {
+            background: #00B207;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 0 6px 6px 0;
+            color: white;
+            font-size: 14px;
+            line-height: 120%;
+            font-weight: 500;
+        }
+
+        @media (max-width: 1400px) {
+            .container {
+                width: 800px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .container {
+                width: 100%;
+            }
+
+            .header__search {
+                display: none;
+            }
+        }
+
+    </style>
+<!--    <script defer src="index.js">-->
+
+<!--    </script>-->
+</head>
+<body>
+    <header class="header container">
+        <div class="header__logo">
+            <div class="header__logo__icon"></div>
+            <div>Ecobazar</div>
+        </div>
+
+        <form class="header__search" action="/search">
+            <div class="header__search__icon"></div>
+            <input type="text" name="query" placeholder="Search">
+
+            <button class="header__search_button">Search</button>
+        </form>
+
+        <div class="header__cart">
+            <div>
+
+            </div>
+            <div>
+                <div>Shopping cart:</div>
+                <div>$57.00</div>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
