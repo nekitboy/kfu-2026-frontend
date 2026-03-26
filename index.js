@@ -1,8 +1,11 @@
-document.querySelector('.header__search_button').addEventListener('click', function(e) {
-    const query = document.querySelector('.header__search input').value.trim();
-    if (query) {
-        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-    } else {
-        alert('Please enter a search term');
-    }
-});
+const searchForm = document.querySelector('.header__search');
+
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const data = new FormData(e.target);
+
+    searchForm.reset();
+    alert(`Поиск по "${data.get('query')}"`)
+
+})
