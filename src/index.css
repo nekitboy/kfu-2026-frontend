@@ -148,7 +148,7 @@ main {
 .product__image {
     aspect-ratio: 1 / 1;
     width: 100%;
-    background-image: url('/assets/potato.png');
+    background-image: url('/src/assets/potato.png');
     background-size: cover;
     background-position: center;
 }
