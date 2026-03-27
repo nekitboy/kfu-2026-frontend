@@ -3,18 +3,26 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-    entry: "./src/index.ts",
+    entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
         clean: true,
     },
     resolve: {
-        extensions: [".ts", ".js"]
+        extensions: [".ts", ".js", '.tsx']
     },
     module: {
         rules: [
-            { test: /\.(ts|tsx)$/, loader: "ts-loader" },
+            {
+                test: /\.(ts|tsx)$/, exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react', "@babel/preset-typescript"]
+                    }
+                }
+            },
             {
                 test: /\.hbs$/,
                 loader: 'handlebars-loader',
@@ -23,20 +31,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.hbs',
+            template: './src/index.html',
             filename: 'index.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/shop.hbs',
-            filename: 'shop.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/about.hbs',
-            filename: 'about.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/blog.hbs',
-            filename: 'blog.html',
         }),
         new CopyPlugin({
             patterns: [
