@@ -9,3 +9,9 @@ searchForm.addEventListener('submit', (e) => {
     alert(`Поиск по "${data.get('query')}"`)
 
 })
+
+function sayHello() {
+    console.log('hello1')
+}
+
+sayHello()
