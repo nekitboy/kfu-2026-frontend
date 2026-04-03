@@ -7,6 +7,10 @@
     --white: #ffffff;
 }
 
+:root.dark {
+    --gray-900: #333333;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -148,7 +152,7 @@ main {
 .product__image {
     aspect-ratio: 1 / 1;
     width: 100%;
-    background-image: url('/src/assets/potato.png');
+    background-image: url('/assets/potato.png');
     background-size: cover;
     background-position: center;
 }

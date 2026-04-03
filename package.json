@@ -4,6 +4,8 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack build",
+    "watch": "webpack watch --mode=development ",
+    "start": "webpack serve --mode=development ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +16,7 @@
     "@babel/preset-env": "^7.29.2",
     "@babel/preset-react": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
+    "@emotion/babel-plugin": "^11.13.5",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "babel-loader": "^10.1.1",
@@ -23,9 +26,13 @@
     "ts-loader": "^9.5.4",
     "typescript": "^6.0.2",
     "webpack": "^5.105.4",
-    "webpack-cli": "^7.0.2"
+    "webpack-cli": "^7.0.2",
+    "webpack-dev-server": "^5.2.3"
   },
   "dependencies": {
+    "@emotion/css": "^11.13.5",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   }

@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-const element = <h1>Hello World</h1>
+import App from "./app";
+import Routing from "./components/routing";
+
+const element = <Routing><App/></Routing>
 
 const rootElement = document.getElementById('root')
 if (!rootElement) {
