@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import {colors} from "../../../../../components/ui/theme";
 import {css} from "@emotion/react";
+import type {NavLinkProps} from "./index";
 
 export const LinkStyled = styled.a<Pick<NavLinkProps, 'active'> & {fontSize?: string}>`
     color: ${colors.gray400};

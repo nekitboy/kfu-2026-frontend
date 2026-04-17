@@ -2,20 +2,21 @@ import React from 'react'
 import HomePage from "./pages/home";
 
 import ShopPage from "./pages/shop";
-import {useRoute} from "./components/routing";
+import Header from "./features/header";
+import {Route, Routes} from "react-router";
 
 const App = () => {
-    const url = useRoute()
 
-    console.log(url)
+    return <><Header/>
+        <main className="container">
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>
+                <Route path="/shop/:id?" element={<ShopPage/>}/>
+                <Route path="*" element={<h1>404 not found</h1>}/>
+            </Routes>
+        </main>
+    </>
 
-    if (url === '/') {
-        return <HomePage />
-    } else if (url === '/shop') {
-        return <ShopPage />
-    }
-
-    return <h1>404 not found</h1>
 }
 
 export default App;

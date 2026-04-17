@@ -2,6 +2,10 @@ import React from 'react';
 import Nav from "./components/nav";
 
 const Header = () => {
+    const submitHandler = (e) => {
+        e.preventDefault();
+        alert('Form submitted!');
+    }
 
 
     return (
@@ -12,7 +16,7 @@ const Header = () => {
                     <div>Ecobazar</div>
                 </div>
 
-                <form className="header__search" action="/search">
+                <form className="header__search" action="/search" onSubmit={submitHandler}>
                     <div className="header__search__icon"></div>
                     <input type="text" name="query" placeholder="Search"/>
 

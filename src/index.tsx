@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router';
 
 import App from "./app";
-import Routing from "./components/routing";
 
-const element = <Routing><App/></Routing>
+const element = <BrowserRouter><App/></BrowserRouter>
 
 const rootElement = document.getElementById('root')
 if (!rootElement) {

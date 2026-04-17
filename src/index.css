@@ -138,54 +138,6 @@ main {
     background: var(--gray-400);
 }
 
-.product-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.product {
-    border: 1px solid var(--gray-100);
-    border-radius: 8px;
-}
-
-.product__image {
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    background-image: url('/assets/potato.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.product__info {
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.product__title {
-    color: var(--gray-700);
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.product__price {
-    color: var(--gray-900);
-    font-size: 16px;
-    line-height: 1.5;
-    font-weight: 500;
-}
-
-.product__star {
-    margin-top: 6px;
-    display: flex;
-}
-.product__star > svg {
-    width: 12px;
-    height: 12px;
-    fill: #FF8A00;
-}
-
 
 @media (max-width: 850px) {
     .container {

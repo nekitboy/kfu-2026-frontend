@@ -1,6 +1,6 @@
 import React, { type HTMLAttributes, type MouseEventHandler, useCallback} from 'react'
 import {LinkStyled} from "./style";
-import {useChangeRoute} from "../../../../../components/routing";
+import {useNavigate} from "react-router";
 
 export interface NavLinkProps extends HTMLAttributes<HTMLAnchorElement>{
     active?: boolean,
@@ -19,11 +19,11 @@ export interface NavLinkProps extends HTMLAttributes<HTMLAnchorElement>{
 
 const Index = ({ active, name, url, className }: NavLinkProps) =>
 {
-    const changeRoute = useChangeRoute();
+    let navigate = useNavigate();
 
     const handleClick: MouseEventHandler = (event) => {
         event.preventDefault();
-        changeRoute(url)
+        navigate(url)
     }
 
     return <LinkStyled className={className} active={active} fontSize="18px" href={url} onClick={handleClick}>{name}</LinkStyled>
