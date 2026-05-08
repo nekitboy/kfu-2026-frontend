@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router';
+import {BrowserRouter} from 'react-router';
+import {Provider} from 'react-redux'
 
 import App from "./app";
+import {store} from "./store";
 
-const element = <BrowserRouter><App/></BrowserRouter>
+const element = <Provider store={store}><BrowserRouter><App/></BrowserRouter></Provider>
 
 const rootElement = document.getElementById('root')
 if (!rootElement) {

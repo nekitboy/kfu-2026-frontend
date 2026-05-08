@@ -1,5 +1,8 @@
 import React from 'react';
 import Nav from "./components/nav";
+import {useSelector} from "react-redux";
+import type {RootState} from "../../store";
+import {getTotalCount} from "../../store/slices/cart/selectors";
 
 const Header = () => {
     const submitHandler = (e) => {
@@ -7,6 +10,7 @@ const Header = () => {
         alert('Form submitted!');
     }
 
+    const totalCount = useSelector(getTotalCount)
 
     return (
         <>
@@ -28,7 +32,7 @@ const Header = () => {
 
                     </div>
                     <div>
-                        <div>Shopping cart:</div>
+                        <div>Shopping cart: {totalCount}</div>
                         <div>$57.00</div>
                     </div>
                 </div>
