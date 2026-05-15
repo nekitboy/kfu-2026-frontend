@@ -1,30 +1,30 @@
-import React, {type ReactNode, useContext, useState} from 'react'
-
+import React, { type ReactNode, useContext, useState } from 'react';
 
 interface RouteContextValue {
-    route?: string;
-    changeRoute: (url: string) => void;
+  route?: string;
+  changeRoute: (url: string) => void;
 }
 
 const RouteContext = React.createContext<RouteContextValue>({ changeRoute: () => null });
 
 interface RoutingProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
 const Routing = ({ children }: RoutingProps) => {
-    const [url, setUrl] = useState(window.location.pathname);
+  const [url, setUrl] = useState(window.location.pathname);
 
-    const changeRoute = (url: string) => {
-        history.pushState(null, '', url);
-        setUrl(url);
-    }
+  const changeRoute = (url: string) => {
+    history.pushState(null, '', url);
+    setUrl(url);
+  };
 
-    return <RouteContext.Provider value={{ route: url, changeRoute }}>{children}</RouteContext.Provider>
-}
+  return (
+    <RouteContext.Provider value={{ route: url, changeRoute }}>{children}</RouteContext.Provider>
+  );
+};
 
-export const useRoute = () => useContext(RouteContext).route
-export const useChangeRoute = () => useContext(RouteContext).changeRoute
+export const useRoute = () => useContext(RouteContext).route;
+export const useChangeRoute = () => useContext(RouteContext).changeRoute;
 
-
-export default Routing
+export default Routing;

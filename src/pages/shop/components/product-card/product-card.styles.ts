@@ -5,7 +5,7 @@ export const Card = styled.div`
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
-  
+
   &:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
